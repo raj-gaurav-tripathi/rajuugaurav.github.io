@@ -26,9 +26,24 @@
   }
 }
 
-@keyframes hero-scroll-bounce {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(6px); opacity: 1; }
+/* 1. New breathe animation for the background orbs */
+@keyframes breathe { 
+  50% { 
+    transform: scale(1.15); 
+    opacity: 0.75; 
+  } 
+}
+
+/* 2. New scroll line animation for the hero cue */
+@keyframes scrollLine { 
+  50% { 
+    transform: scaleX(0.35); 
+    transform-origin: right; 
+    opacity: 0.5; 
+  } 
+  51% { 
+    transform-origin: left; 
+  } 
 }
 
 @keyframes badge-pulse {
@@ -38,13 +53,6 @@
 
 .hero__badge-dot {
   animation: badge-pulse 2.6s var(--ease-out) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero__badge-dot,
-  .hero__scroll-cue svg {
-    animation: none;
-  }
 }
 
 @keyframes hero-fade-in {
@@ -63,8 +71,11 @@
 .hero__actions    { animation-delay: 300ms; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__inner > * {
-    animation: none;
+  .hero__inner > *,
+  .hero__badge-dot,
+  .hero__glow,
+  .hero__scroll-line {
+    animation: none !important;
   }
 }
 
