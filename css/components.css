@@ -1,0 +1,362 @@
+/* ==========================================================================
+   COMPONENTS
+   ==========================================================================
+   Small reusable pieces used across multiple sections: buttons, cards,
+   tags/badges, the quote block, and contact link tiles. If you want to
+   change what every card or button on the site looks like, this is the
+   file to edit.
+   ========================================================================== */
+
+/* --- Buttons ------------------------------------------------------------*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-normal);
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background-color: var(--color-flux);
+  color: var(--color-void);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-flux-strong);
+  box-shadow: var(--shadow-glow-flux);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid var(--color-void-line);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-flux);
+  color: var(--color-flux);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-paper-line);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-resonance);
+  color: var(--color-resonance-strong);
+}
+
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+}
+
+/* --- Label heading ---------------------------------------------------------
+   Small mono, uppercase, letterspaced sub-heading used above things like
+   "Tools & Techniques" or "Working with" — reused across About and
+   Research so it's defined once here instead of per section. */
+.label-heading {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-3);
+}
+
+/* --- Tags / badges --------------------------------------------------------
+   Used for research techniques, project categories, publication types. The
+   monospace face signals "this is metadata", consistent with dates below. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-normal);
+  background-color: var(--color-paper-alt);
+  color: var(--color-ink-soft);
+  border: 1px solid var(--color-paper-line);
+}
+
+.tag--accent {
+  background-color: rgba(82, 123, 168, 0.08);
+  border-color: rgba(82, 123, 168, 0.25);
+  color: var(--color-resonance-strong);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* --- Cards ---------------------------------------------------------------
+   Shared card shell used by project cards, publication cards and blog
+   teaser cards. Flat at rest, a small lift + border brighten on hover. */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid var(--color-paper-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-paper-line);
+}
+
+.card__media {
+  aspect-ratio: 16 / 10;
+  background-color: var(--color-paper-alt);
+  overflow: hidden;
+}
+
+.card__media img,
+.card__media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.card__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-resonance-strong);
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  flex: 1;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.card__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.card__link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* --- Quote strip -----------------------------------------------------------
+   A single quote, chosen at random on load from js/data/quotes.js, shown in
+   a slim dark band. Deliberately static (no auto-cycling) to stay quiet. */
+.quote-strip {
+  padding-block: var(--space-8);
+}
+
+.quote-strip blockquote {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: #fff;
+}
+
+.quote-strip cite {
+  display: block;
+  margin-top: var(--space-5);
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-flux);
+}
+
+/* --- Empty state -----------------------------------------------------------
+   Used by the Publications section until real entries are added. */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-5);
+  border: 1px dashed var(--color-paper-line);
+  border-radius: var(--radius-lg);
+  color: var(--color-ink-soft);
+}
+
+.empty-state svg {
+  width: 34px;
+  height: 34px;
+  color: var(--color-resonance);
+}
+
+.empty-state p {
+  max-width: 40ch;
+  font-size: var(--text-sm);
+}
+
+/* --- Contact tiles ---------------------------------------------------------
+   Each way to reach Raj (email, Scholar, GitHub…) as a small linked tile. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+
+.contact-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-void-line);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background-color var(--duration-fast) var(--ease-out);
+}
+
+.contact-tile:hover {
+  border-color: var(--color-flux);
+  background-color: rgba(96, 133, 176, 0.05);
+}
+
+.contact-tile__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: rgba(96, 133, 176, 0.1);
+  color: var(--color-flux);
+}
+
+.contact-tile__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.contact-tile__label {
+  font-size: var(--text-xs);
+  color: var(--color-mist-soft);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.contact-tile__value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* --- Process steps (used in Research section) -----------------------------
+   A genuinely sequential 4-step diagram of how magnetogenesis happens —
+   numbers are used here because the steps really are causal/ordered, not
+   as decoration. */
+.process {
+  display: flex;
+  flex-direction: column;
+}
+
+.process__step {
+  display: flex;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-paper-line);
+}
+
+.process__step:last-child {
+  padding-bottom: 0;
+}
+
+.process__index {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-resonance);
+  color: var(--color-resonance-strong);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.process__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--color-ink);
+}
+
+.process__desc {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  max-width: 56ch;
+}

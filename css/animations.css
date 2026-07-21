@@ -1,0 +1,127 @@
+/* ==========================================================================
+   ANIMATIONS
+   ==========================================================================
+   Keyframes + the scroll-reveal system. js/ui.js adds the class
+   "is-revealed" to elements carrying [data-reveal] once they scroll into
+   view (via IntersectionObserver); the actual fade/rise is defined here in
+   CSS so it stays GPU-cheap and easy to retune.
+
+   Reduced motion: base.css already disables most transitions/animations
+   globally when prefers-reduced-motion is set. The one exception is the
+   scroll-reveal below, which we handle explicitly so content doesn't get
+   stuck invisible if a browser only partially honours the global rule.
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger helper — add [data-reveal-group] to a grid/list parent and each
+   direct child with [data-reveal] receives an increasing delay. Set via
+   inline custom property by ui.js rather than N manual classes. */
+[data-reveal] {
+  transition-delay: calc(var(--reveal-delay, 0) * 70ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Hero scroll cue */
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* Gentle pulse used by the hero badge dot */
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(96, 133, 176, 0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(96, 133, 176, 0.12); }
+}
+
+.hero__badge-dot {
+  animation: badge-pulse 2.6s var(--ease-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge-dot,
+  .hero__scroll-cue svg {
+    animation: none;
+  }
+}
+
+/* Fade-in used once for the whole hero on first paint, independent of the
+   scroll-reveal system since it's above the fold and visible immediately. */
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__inner > * {
+  animation: hero-fade-in var(--duration-slow) var(--ease-out) both;
+}
+
+.hero__badge      { animation-delay: 0ms; }
+.hero h1          { animation-delay: 80ms; }
+.hero__role       { animation-delay: 150ms; }
+.hero__tags       { animation-delay: 220ms; }
+.hero__actions    { animation-delay: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__inner > * {
+    animation: none;
+  }
+}
+
+/* Back-to-top button visibility, toggled by ui.js adding .is-visible */
+.back-to-top-wrap {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+
+.back-to-top-wrap.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top-wrap button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-ink);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.back-to-top-wrap button:hover {
+  background-color: var(--color-void);
+}
+
+.back-to-top-wrap svg {
+  width: 18px;
+  height: 18px;
+}

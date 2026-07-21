@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Raj</title>
+  <meta name="description" content="Occasional, informal write-ups on cosmology and research life, from Raj — BS-MS physics student at IISER Kolkata.">
+  <meta name="color-scheme" content="light">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/blog.css">
+
+  <!-- Root-level page — see js/include-partials.js for why this matters. -->
+  <script>window.SITE_ROOT = "";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div data-include="partials/nav.html"></div>
+
+  <main id="main-content">
+    <section class="page-header section--void">
+      <div class="container">
+        <span class="eyebrow eyebrow--on-dark page-header__eyebrow">§ Blog</span>
+        <h1>Notes on cosmology &amp; research life</h1>
+        <p>Occasional, informal write-ups — physics explainers, and updates from the research process.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-list" id="blog-list" data-reveal-group>
+          <!-- Static fallback — js/render.js (renderBlogList) replaces this
+               automatically once js/data/blog-posts.js has entries. -->
+          <div class="empty-state blog-list__empty" data-reveal>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" stroke-linejoin="round"/>
+            </svg>
+            <p>No posts yet — check back soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <div class="back-to-top-wrap" id="back-to-top-wrap">
+    <button id="back-to-top-btn" aria-label="Back to top">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 9 8 4 3 9m5-5v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <script src="js/include-partials.js"></script>
+  <script src="js/data/blog-posts.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/blog-main.js"></script>
+</body>
+</html>

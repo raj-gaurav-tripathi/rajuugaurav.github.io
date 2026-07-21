@@ -1,0 +1,163 @@
+<!--
+  SAMPLE POST — this is a real, usable first entry, but it's also meant as
+  a TEMPLATE. To publish a new post:
+    1. Copy this whole file to posts/your-post-slug.html
+    2. Edit the <title>, the post__meta (date/tags), the h1, the lede, and
+       the body below.
+    3. Add a matching entry to js/data/blog-posts.js so it shows up in the
+       listing (see the TEMPLATE comment at the top of that file).
+  Everything else in this file (the <head>, the nav/footer includes, the
+  scripts at the bottom) can stay exactly as it is.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where Do Cosmic Magnetic Fields Come From? — Raj</title>
+  <meta name="description" content="A short, non-technical starting point for what 'magnetogenesis' means and why the origin of cosmic magnetic fields is still an open question.">
+  <meta name="color-scheme" content="light">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/blog.css">
+
+  <!-- This page lives one folder down, in /posts/ — SITE_ROOT tells
+       include-partials.js to prefix shared nav/footer links with "../".
+       Copy this line as-is into any new post in this folder. -->
+  <script>window.SITE_ROOT = "../";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div data-include="partials/nav.html"></div>
+
+  <main id="main-content">
+    <article class="post">
+      <div class="container">
+
+        <header class="post__header">
+          <div class="post__meta">
+            <time datetime="2026-07-21">July 21, 2026</time>
+            <span class="tag">Cosmology</span>
+            <span class="tag">Magnetogenesis</span>
+          </div>
+          <h1>Where Do Cosmic Magnetic Fields Come From?</h1>
+          <p class="post__lede">
+            Every galaxy we've ever measured is threaded with a magnetic
+            field, coherent over tens of thousands of light-years. Where did
+            they come from — and why does that question end up pointing at
+            dark matter?
+          </p>
+        </header>
+
+        <div class="post__body prose">
+          <p>
+            Point a radio telescope at almost any galaxy and you'll find a
+            magnetic field: microgauss-strength, ordered over scales far
+            larger than any single star or supernova remnant could plausibly
+            organize on its own. Galaxy clusters have them too, and there
+            are hints of magnetic fields even in the emptiest voids between
+            galaxies. Magnetism, it turns out, is not a local curiosity — it
+            is a cosmic default.
+          </p>
+
+          <h2>The trouble with dynamos</h2>
+          <p>
+            The standard explanation for how galactic fields reach their
+            observed strength is the dynamo effect: turbulence and
+            differential rotation in a galaxy's gas can take a weak magnetic
+            field and amplify it over billions of years, in much the same
+            way Earth's core sustains its own field. Dynamo theory works
+            well as an amplifier. What it cannot do is start from nothing —
+            it needs a "seed" field already in place before it can get to
+            work.
+          </p>
+          <p>
+            So the real question just moves one step back: where did the
+            seed come from? Astrophysical processes in the first stars and
+            galaxies — the Biermann battery, misaligned pressure and density
+            gradients in ionized gas — can produce something, but the
+            numbers are uncomfortably small and uncertain. That gap is what
+            "magnetogenesis" research is trying to close: finding a
+            mechanism that produces a seed field early enough, and strong
+            enough, for the dynamo to take over.
+          </p>
+
+          <h2>A particle physics origin</h2>
+          <p>
+            One family of proposals looks past astrophysics entirely and
+            asks whether fundamental physics could have generated a seed
+            field directly. This is the angle I find most interesting:
+            ultralight dark matter, or an axion-like particle, behaves like
+            a classical field that oscillates coherently once the universe
+            has expanded enough. If that field couples to electromagnetism
+            through a gauge-kinetic interaction, its oscillation can pump
+            energy into specific electromagnetic field modes through a
+            resonance effect — amplifying a microscopic quantum fluctuation
+            into a macroscopic seed field, no dynamo required to get
+            started.
+          </p>
+          <blockquote>
+            What makes this appealing isn't just that it works on paper — it
+            is that the same coupling constant governing the resonance also
+            controls other observables, so the scenario is falsifiable in
+            more than one place at once.
+          </blockquote>
+          <p>
+            That's the part I find genuinely exciting about working on this
+            problem: it sits at a real intersection. Getting the mechanism
+            right means taking dark matter model-building seriously as
+            particle physics, while the payoff — if the numbers work out —
+            is a testable, observable imprint on the universe we can already
+            see. I'll write more here as the technical side of this project
+            develops.
+          </p>
+        </div>
+
+        <footer class="post__footer">
+          <a class="post__back" href="../blog.html">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 8H4m0 0 4-4M4 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to all posts
+          </a>
+        </footer>
+
+      </div>
+    </article>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <div class="back-to-top-wrap" id="back-to-top-wrap">
+    <button id="back-to-top-btn" aria-label="Back to top">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 9 8 4 3 9m5-5v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+  <script src="../js/include-partials.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/ui.js"></script>
+  <script>
+    // Individual posts don't render any data-driven lists, so they just
+    // need chrome + UI polish — no separate "post-main.js" file needed for
+    // this one line. Copy this block as-is into any new post.
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.loadSiteChrome) {
+        window.loadSiteChrome().then(function () {
+          if (window.initNav) window.initNav();
+          if (window.initUI) window.initUI();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

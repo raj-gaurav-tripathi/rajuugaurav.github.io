@@ -1,0 +1,13 @@
+Add your CV/resume here as a PDF named exactly:
+
+    CV.pdf
+
+The "Download CV" buttons in the nav and hero already link to
+assets/resume/CV.pdf, so once you drop your file in with that exact name,
+both buttons start working — no HTML editing required.
+
+If you'd rather use a different filename, that's fine too — just update the
+two href="assets/resume/CV.pdf" references in index.html (search for
+"Download CV" to find them) and the one in partials/nav.html.
+
+You can delete this .txt file once your real CV is in place.
