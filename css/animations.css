@@ -1,0 +1,109 @@
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal] {
+  transition-delay: calc(var(--reveal-delay, 0) * 70ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(142, 182, 216, 0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(142, 182, 216, 0.12); }
+}
+
+.hero__badge-dot {
+  animation: badge-pulse 2.6s var(--ease-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge-dot,
+  .hero__scroll-cue svg {
+    animation: none;
+  }
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__inner > * {
+  animation: hero-fade-in var(--duration-slow) var(--ease-out) both;
+}
+
+.hero__badge      { animation-delay: 0ms; }
+.hero h1          { animation-delay: 80ms; }
+.hero__role       { animation-delay: 150ms; }
+.hero__tags       { animation-delay: 220ms; }
+.hero__actions    { animation-delay: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__inner > * {
+    animation: none;
+  }
+}
+
+.back-to-top-wrap {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+
+.back-to-top-wrap.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top-wrap button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-ink);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.back-to-top-wrap button:hover {
+  background-color: var(--color-void);
+}
+
+.back-to-top-wrap svg {
+  width: 18px;
+  height: 18px;
+}

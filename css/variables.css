@@ -1,0 +1,76 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  --color-void: #0b0f24;
+  --color-void-soft: #141a35;
+  --color-void-line: #262d52;
+
+  --color-paper: #f5f6fb;
+  --color-paper-alt: #eceef6;
+  --color-paper-line: #dde0ee;
+
+  --color-ink: #161a2e;
+  --color-ink-soft: #4c5170;
+  --color-mist: #b9bfdd;
+  --color-mist-soft: #7d84ab;
+
+  --color-flux: #8eb6d8;
+  --color-flux-strong: #a5c7e3;
+  --color-resonance: #64748b; 
+  --color-resonance-strong: #475569;
+
+  --font-display: 'STIX Two Text', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+  --text-xs:   clamp(0.72rem, 0.69rem + 0.15vw, 0.8rem);
+  --text-sm:   clamp(0.84rem, 0.8rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+  --text-xl:   clamp(1.4rem, 1.25rem + 0.6vw, 1.75rem);
+  --text-2xl:  clamp(1.75rem, 1.5rem + 1vw, 2.3rem);
+  --text-3xl:  clamp(2.2rem, 1.8rem + 1.6vw, 3.2rem);
+  --text-4xl:  clamp(3.5rem, 5vw + 1rem, 5.5rem); 
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(11, 15, 36, 0.06), 0 1px 1px rgba(11, 15, 36, 0.04);
+  --shadow-md: 0 8px 24px rgba(11, 15, 36, 0.09), 0 2px 6px rgba(11, 15, 36, 0.06);
+  --shadow-lg: 0 20px 48px rgba(11, 15, 36, 0.16), 0 6px 16px rgba(11, 15, 36, 0.08);
+  --shadow-glow-flux: 0 0 0 1px rgba(142, 182, 216, 0.35), 0 8px 28px rgba(142, 182, 216, 0.18);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 280ms;
+  --duration-slow: 500ms;
+
+  --container-max: 1180px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --nav-height: 76px;
+}
