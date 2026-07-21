@@ -1,0 +1,298 @@
+/* ==========================================================================
+   LAYOUT — Navigation + Footer
+   ==========================================================================
+   Styles for the markup that lives in partials/nav.html and
+   partials/footer.html. These two files are fetched and injected into every
+   page by js/include-partials.js, so their styling lives in one shared
+   place here rather than being duplicated per page.
+   ========================================================================== */
+
+/* --- Navigation ----------------------------------------------------------*/
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background-color: rgba(245, 246, 251, 0.85);
+  backdrop-filter: blur(10px) saturate(1.4);
+  -webkit-backdrop-filter: blur(10px) saturate(1.4);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+/* nav.js toggles this class on once the page has scrolled a little, so the
+   hairline + shadow only appear once there's content to separate from. */
+.site-nav.is-scrolled {
+  border-bottom-color: var(--color-paper-line);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-nav__inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  color: var(--color-ink);
+}
+
+.site-nav__brand-mark {
+  width: 30px;
+  height: 30px;
+  color: var(--color-flux-strong);
+}
+
+.site-nav__links {
+  display: none;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.site-nav__links a {
+  position: relative;
+  padding-block: var(--space-1);
+  color: var(--color-ink-soft);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-nav__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -4px;
+  height: 2px;
+  background-color: var(--color-flux);
+  transition: right var(--duration-base) var(--ease-out);
+}
+
+.site-nav__links a:hover {
+  color: var(--color-ink);
+}
+
+.site-nav__links a:hover::after {
+  right: 0;
+}
+
+/* JS adds this to the link matching the section currently in view */
+.site-nav__links a.is-active {
+  color: var(--color-ink);
+}
+
+.site-nav__links a.is-active::after {
+  right: 0;
+}
+
+.site-nav__cta {
+  display: none;
+}
+
+/* Hamburger toggle — visible on mobile only */
+.site-nav__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+
+.site-nav__toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-ink);
+  border-radius: var(--radius-full);
+  transition: transform var(--duration-base) var(--ease-out),
+              opacity var(--duration-base) var(--ease-out);
+}
+
+.site-nav__toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-nav__toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.site-nav__toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu overlay */
+.site-nav__mobile {
+  position: fixed;
+  inset: var(--nav-height) 0 0 0;
+  background-color: var(--color-paper);
+  padding: var(--space-6) var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transform: translateX(100%);
+  transition: transform var(--duration-slow) var(--ease-out);
+  z-index: 99;
+  overflow-y: auto;
+}
+
+.site-nav__mobile.is-open {
+  transform: translateX(0);
+}
+
+.site-nav__mobile a {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-paper-line);
+  color: var(--color-ink);
+}
+
+.site-nav__mobile .site-nav__cta {
+  display: inline-flex;
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 1024px) {
+  .site-nav__links {
+    display: flex;
+  }
+  .site-nav__cta {
+    display: inline-flex;
+  }
+  .site-nav__toggle,
+  .site-nav__mobile {
+    display: none;
+  }
+}
+
+/* --- Footer ----------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-void);
+  color: var(--color-mist-soft);
+  padding-block: var(--space-7);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.site-footer__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-void-line);
+}
+
+.site-footer__brand {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: #fff;
+}
+
+.site-footer__tagline {
+  font-size: var(--text-sm);
+  max-width: 42ch;
+  margin-top: var(--space-2);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.site-footer__links a {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-footer__links a:hover {
+  color: var(--color-flux);
+}
+
+.site-footer__social {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.site-footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-void-line);
+  border-radius: var(--radius-full);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+
+.site-footer__social a:hover {
+  border-color: var(--color-flux);
+  color: var(--color-flux);
+}
+
+.site-footer__social svg {
+  width: 17px;
+  height: 17px;
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-mist-soft);
+}
+
+.site-footer__bottom a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-mist);
+  align-self: flex-start;
+}
+
+.back-to-top svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (min-width: 640px) {
+  .site-footer__top {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .site-footer__bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

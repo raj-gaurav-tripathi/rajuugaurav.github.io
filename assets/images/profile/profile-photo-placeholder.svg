@@ -1,0 +1,8 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#eceef6"/>
+  <ellipse cx="200" cy="188" rx="125" ry="56" stroke="#c3c9e2" stroke-width="3" fill="none"/>
+  <circle cx="200" cy="188" r="24" fill="#c3c9e2"/>
+  <circle cx="313" cy="163" r="9" fill="#c3c9e2"/>
+  <text x="200" y="300" font-family="monospace" font-size="13" letter-spacing="2" fill="#8b91ac" text-anchor="middle">YOUR PHOTO HERE</text>
+  <text x="200" y="322" font-family="monospace" font-size="10" letter-spacing="1" fill="#a7acc4" text-anchor="middle">assets/images/profile/</text>
+</svg>
