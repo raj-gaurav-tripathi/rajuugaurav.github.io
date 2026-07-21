@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO meta tags to ensure your name ranks well when professors search for you -->
+    <meta name="description" content="Academic portfolio of Raj Gaurav Tripathi, researcher in theoretical physics, early-universe cosmology, and quantum gravity.">
+    <title>Raj Gaurav Tripathi | Theoretical Physics & Cosmology</title>
+    
+    <!-- Flat file path targeting the style.css in your root GitHub directory -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Academic Typography: Merriweather for rigorous text, Inter for clean UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Primary Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="#hero" class="logo">RGT.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects & Experience</a></li>
+                <li><a href="#resources">Notes & Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="hero" class="hero">
+            <!-- Canvas ID for the background animation we will add in the JS step -->
+            <canvas id="cosmic-canvas"></canvas>
+            <div class="hero-content">
+                <h1>Raj Gaurav Tripathi</h1>
+                <h2>Theoretical Physicist & Cosmologist</h2>
+                <blockquote>
+                    "The underlying physical laws necessary for the mathematical theory of a large part of physics and the whole of chemistry are thus completely known..." <br>— Paul A.M. Dirac
+                </blockquote>
+                <a href="#about" class="btn">View Academic Profile</a>
+            </div>
+        </section>
+
+        <!-- Academic Biography -->
+        <section id="about" class="section light-bg">
+            <div class="container intro-container">
+                <div class="intro-photo">
+                    <!-- Flat file path targeting your uploaded image -->
+                    <img src="profile.jpg" alt="Raj Gaurav Tripathi Profile" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder" style="display:none;">
+                        <span>Upload profile.jpg</span>
+                    </div>
+                </div>
+                <div class="intro-text">
+                    <h2>Academic Biography</h2>
+                    <p>I am an undergraduate researcher currently completing my Master's year in the BS-MS dual degree physics program at the Indian Institute of Science Education and Research (IISER) Kolkata. My primary research is anchored in theoretical physics, with a distinct focus on early-universe cosmology, inflationary models, and quantum gravity.</p>
+                    <p>My academic philosophy centers on the rigorous application of advanced mathematical frameworks to unravel the fundamental laws governing spacetime. I heavily utilize computational tools, including Python and Mathematica, to run numerical simulations that bridge foundational physics concepts with complex theoretical phenomenology.</p>
+                    <p>Beyond the chalkboard and terminal, I maintain a disciplined routine of running and participating in club marathons to cultivate the mental endurance required for deep theoretical work.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Research Interests -->
+        <section id="research" class="section">
+            <div class="container">
+                <h2 class="section-title">Research Focus</h2>
+                <div class="grid-layout">
+                    <article class="card">
+                        <h3>Early-Universe Cosmology</h3>
+                        <p>Investigating the dynamics of the universe immediately following the Big Bang. My specific interests lie in single-field slow-roll inflation dynamics and the theoretical implications for the generation of primordial perturbations.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Quantum Gravity</h3>
+                        <p>Exploring foundational frameworks designed to reconcile general relativity with quantum mechanics. Currently focusing on the mathematical structures and discrete spacetime geometries within causal set theory.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Quantum Field Theory</h3>
+                        <p>Studying high-energy physics phenomenology, the behavior of subatomic particles, and the mathematical beauty of gauge symmetries underlying the fundamental forces.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Projects & Experience -->
+        <section id="projects" class="section light-bg">
+            <div class="container">
+                <h2 class="section-title">Projects & Experience</h2>
+                
+                <div class="grid-layout">
+                    <article class="card project-card">
+                        <h3>Causal Set Theory & Quantum Gravity</h3>
+                        <p class="institution"><strong>Master's Thesis | Raman Research Institute</strong></p>
+                        <p>Currently undertaking a full-year thesis project under the supervision of Prof. Sumati Surya. The research focuses on the foundational aspects of causal set theory as a rigorous approach to quantum gravity.</p>
+                    </article>
+                    
+                    <article class="card project-card">
+                        <h3>Cosmological Inflation Dynamics</h3>
+                        <p class="institution"><strong>Research Project | IISER Kolkata</strong></p>
+                        <p>Completed a semester-long cosmological research project supervised by Prof. Koushik Dutta. Simulated single-field slow-roll inflation dynamics using Python to analyze theoretical implications for the early universe.</p>
+                    </article>
+
+                    <article class="card project-card">
+                        <h3>Space Weather Forecasting</h3>
+                        <p class="institution"><strong>Magnetohydrodynamics Computation</strong></p>
+                        <p>Developed a theoretical framework and Python-based data analysis pipeline. Utilized signal processing techniques to calculate solar plasma travel times and forecast geomagnetic disturbances.</p>
+                    </article>
+
+                    <article class="card project-card">
+                        <h3>Delayed Choice Quantum Eraser</h3>
+                        <p class="institution"><strong>Independent Research</strong></p>
+                        <p>Reproduced the theoretical framework and mathematical calculations of the seminal quantum eraser experiment, deeply exploring wave-particle duality and the mechanics of quantum entanglement.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources, Notes & Publications -->
+        <section id="resources" class="section">
+            <div class="container">
+                <h2 class="section-title">Academic Resources</h2>
+                <p class="section-subtitle">Typed theoretical notes, simulations, and upcoming publications.</p>
+                
+                <div class="notes-section">
+                    <h3>Coursework & Transcripts</h3>
+                    <ul class="notes-list">
+                        <!-- Add your PDF filenames here once uploaded -->
+                        <li><a href="#">Curriculum Vitae (PDF)</a></li>
+                        <li><a href="#">Theoretical Physics Coursework Notes (PDF)</a></li>
+                        <li><a href="#">Mathematica Simulation Notebooks (ZIP)</a></li>
+                    </ul>
+                </div>
+
+                <div class="coming-soon" style="margin-top: 40px; text-align: center;">
+                    <h3>Publications</h3>
+                    <p><em>Currently preparing manuscripts and academic reports. This section will be updated with relevant preprints and peer-reviewed literature.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section light-bg">
+            <div class="container">
+                <h2 class="section-title">Contact & Applications</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                    I am actively preparing applications for PhD programs to continue my graduate-level research in theoretical physics. I welcome discussions regarding doctoral research opportunities, academic collaborations, or inquiries regarding my thesis work.
+                </p>
+                
+                <div class="contact-info">
+                    <p><strong>Institution:</strong> Indian Institute of Science Education and Research (IISER) Kolkata</p>
+                    <!-- Update with your actual email and GitHub link -->
+                    <p><strong>Academic Email:</strong> <a href="mailto:your.email@iiserkol.ac.in">your.email@iiserkol.ac.in</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/raj-gaurav-tripathi" target="_blank" rel="noopener noreferrer">github.com/raj-gaurav-tripathi</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>"Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution." — Albert Einstein</p>
+            <p>&copy; 2026 Raj Gaurav Tripathi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Flat file path targeting the main.js in your root GitHub directory -->
+    <script src="main.js"></script>
+</body>
+</html>
